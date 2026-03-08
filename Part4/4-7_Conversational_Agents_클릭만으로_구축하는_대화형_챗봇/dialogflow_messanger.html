@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트</title>
+   
+    <!-- Dialogflow Messenger 스타일시트 -->
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+   
+    <!-- Dialogflow Messenger 스크립트 -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+</head>
+<body>
+
+    <h1>Dialogflow Messenger Test</h1>
+    <p>이 페이지는 GCP Conversational Agents를 테스트하기 위한 간단한 HTML 페이지입니다.</p>
+    <p>오른쪽 하단에 표시되는 챗 아이콘을 클릭하여 테스트를 시작할 수 있습니다.</p>
+
+    <!-- Dialogflow Messenger 위젯 코드 -->
+    <df-messenger
+      location="us-central1"
+      project-id="vertexai-books"
+      agent-id="2031c423-4b22-4bc6-b609-9ebe7d946323"
+      language-code="ko"
+      max-query-length="-1">
+      <!-- chat-width와 chat-height 속성을 추가하여 채팅창 크기를 조절합니다. -->
+      <df-messenger-chat-bubble
+       chat-title="Restaurant Search Agent"
+       chat-width="340"
+       chat-height="460">
+      </df-messenger-chat-bubble>
+    </df-messenger>
+   
+    <!-- 위젯 스타일 -->
+    <style>
+      df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: Google Sans;
+        --df-messenger-chat-background: #f3f6fc;
+        --df-messenger-message-user-background: #d3e3fd;
+        --df-messenger-message-bot-background: #fff;
+        bottom: 16px;
+        right: 16px;
+      }
+    </style>
+
+</body>
+</html>

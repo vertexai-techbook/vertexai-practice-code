@@ -1,0 +1,10 @@
+requests
+uvicorn
+fastmcp
+starlette
+python-dotenv
+a2a-sdk
+langgraph
+langchain-core
+langchain-google-vertexai
+langchain-mcp-adapters

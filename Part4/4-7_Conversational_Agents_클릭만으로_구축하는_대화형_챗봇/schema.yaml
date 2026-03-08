@@ -1,0 +1,66 @@
+openapi: 3.0.2
+info:
+  title: SearchRestaurantTool
+  description: |
+    Restaurant Recommendation
+  version: "1.0"
+
+servers:
+  - url: https://restaurant-recommendation-<프로젝트 넘버>.us-central1.run.app
+
+paths:
+  /:
+    post:
+      summary: Recommend the Restaurants
+      operationId: search_restaurant_tool
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserInfoInput"
+      responses:
+        "200":
+          description: Restaurant Search Successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RestaurantSearchOutput"
+
+components:
+  schemas:
+    UserInfoInput:
+      type: object
+      properties:
+        cuisine:
+          type: string
+          description: Types of food (e.g., 한식, 중식)
+        location:
+          type: string
+          description: Local name
+      required:
+        - cuisine
+        - location
+    RestaurantSearchOutput:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Restaurant name
+              address:
+                type: string
+                description: Restaurant address
+              rating:
+                type: string
+                description: Restaurant ratings
+              menu:
+                type: integer
+                description: Restaurant signature menus
+              summary:
+                type: string
+                description: Restaurant summary
