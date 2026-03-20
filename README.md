@@ -1,12 +1,12 @@
 # vertexai-practice-code
 
-「Vertex AI와 Gemini를 활용한 생성형 AI 개발의 모든 것」의 예제 코드입니다.
+「Vertex AI와 Gemini로 시작하는 생성형 AI 실전 개발」의 예제 코드입니다.
 본 저장소는 독자분들이 책의 실습을 편히 따라 하실 수 있도록 예제 파일들을 제공합니다.
 
 ## 📌 안내 사항
 
 - **포함된 내용**: 책에서 사용된 **Python 코드, SQL Query문, YAML 파일** 등 실습에 필요한 소스 코드 들이 포함되어 있습니다.
-- **제외된 내용**: 책 본문에서 설명하는 **시스템 프롬프트**나 터미널에서 실행하는 **CLI 명령어** 등은 포함되어 있지 않으므로 책 본문을 함께 참고해 주시기 바랍니다.
+- **제외된 내용**: 책 본문에서 설명하는 **시스템 프롬프트**나 사용된 데이터, 터미널에서 실행하는 **CLI 명령어** 등은 포함되어 있지 않으므로 책 본문을 함께 참고해 주시기 바랍니다.
 
 ## 📋 필요 패키지 설치
 
@@ -93,3 +93,70 @@ pip install google-genai google-cloud-aiplatform
 
 - `7-1_Gemini_Multimodal_Contents_Understanding.py`
 - `7-2_Gemini_Multimodal_Contents_Generate.py`
+
+---
+
+## 📚 참고 문헌
+
+### Part 1. 시작하기 - Google Cloud Vertex AI와 생성형 AI 개요
+
+- [Gemini API Text Generation](https://ai.google.dev/gemini-api/docs/text-generation)
+- [Gemini Thinking](https://ai.google.dev/gemini-api/docs/thinking)
+- [Gemini Models](https://ai.google.dev/gemini-api/docs/models)
+- [Gemini API Release Note](https://ai.google.dev/gemini-api/docs/changelog)
+- [Gemini Model Deprecations](https://ai.google.dev/gemini-api/docs/deprecations)
+- [Gemini Developer API vs Vertex AI](https://ai.google.dev/gemini-api/docs/migrate-to-cloud)
+- [Generative AI on Vertex AI](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/overview)
+- [Google Cloud IAM](https://docs.cloud.google.com/iam/docs)
+- [Google Cloud Storage](https://docs.cloud.google.com/storage/docs)
+
+### Part 2. LLM과의 대화법 - 프롬프트 엔지니어링 및 관리
+
+- [Prompt Engineering](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-design-strategies)
+- [Vertex AI Prompt Management](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-reference/prompt-classes)
+
+### Part 3. 지식 기반 확장 - 나만의 지식을 학습한 AI 시스템 구축
+
+- [Vertex AI Embeddings](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings)
+- [Vertex AI Vector Search](https://docs.cloud.google.com/vertex-ai/docs/vector-search/overview)
+- [Vertex AI Search](https://docs.cloud.google.com/generative-ai-app-builder/docs)
+- [Vertex AI RAG Engine](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-overview)
+- [Gemini File Search](https://ai.google.dev/gemini-api/docs/file-search)
+
+### Part 4. 스스로 생각하고 행동하는 AI - 맞춤형 AI 에이전트 개발
+
+- [Gemini Function Calling](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-reference/function-calling)
+- [Google Built-in Tools](https://ai.google.dev/gemini-api/docs/tools)
+- [MCP (Model Context Protocol)](https://modelcontextprotocol.io/docs/getting-started/intro)
+- [Google ADK](https://google.github.io/adk-docs/)
+- [MCP Toolbox for Databases](https://googleapis.github.io/genai-toolbox/getting-started/introduction/)
+- [Conversational Agents](https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents)
+
+### Part 5. 플랫폼 확장 - BigQuery와 Gemini의 통합 활용 전략
+
+- [Google BigQuery](https://docs.cloud.google.com/bigquery/docs)
+- [BigQuery ML](https://docs.cloud.google.com/bigquery/docs/bqml-introduction)
+- [BigQuery Generative AI functions](https://docs.cloud.google.com/bigquery/docs/generative-ai-overview)
+- [BigQuery Vector Search](https://docs.cloud.google.com/bigquery/docs/vector-search-intro)
+
+### Part 6. 엔터프라이즈 AI - 차세대 에이전트 아키텍처와 통합 AI 플랫폼
+
+- [A2A Protocol](https://a2a-protocol.org/latest/)
+- [Gemini Enterprise](https://docs.cloud.google.com/gemini/enterprise/docs)
+
+### Part 7. 텍스트를 넘어서 - 이미지, 영상, 음성을 아우르는 Gemini
+
+- [Gemini Image Understanding](https://ai.google.dev/gemini-api/docs/image-understanding)
+- [Gemini Video Understanding](https://ai.google.dev/gemini-api/docs/video-understanding)
+- [Gemini Audio Understanding](https://ai.google.dev/gemini-api/docs/audio)
+- [Gemini Image Generation](https://ai.google.dev/gemini-api/docs/image-generation)
+- [Gemini Video Generation](https://ai.google.dev/gemini-api/docs/video)
+- [Gemini Speech Generation](https://ai.google.dev/gemini-api/docs/speech-generation)
+
+### APPENDIX
+
+- [Vertex AI PayGo](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/standard-paygo)
+- [Vertex AI Provisioned Throughput](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/provisioned-throughput/overview)
+- [Gemini API Rate Limits](https://ai.google.dev/gemini-api/docs/rate-limits)
+- [Gen AI Evaluation Service](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/evaluation-overview)
+- [Model Armor](https://docs.cloud.google.com/model-armor)
