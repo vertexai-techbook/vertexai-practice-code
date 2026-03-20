@@ -1,4 +1,4 @@
-# == 2. Vertex AI Embeddings를 활용한 임베딩 생성 == #
+# == 2.2. Vertex AI Embeddings를 활용한 임베딩 생성 == #
 import json
 import os
 from typing import List, Dict, Optional
@@ -52,6 +52,9 @@ with open(file_path, "w") as f:
 # == 2.3. 색인 구축 및 엔드포인트 배포 == #
 from google.cloud import aiplatform
 
+# AI Platform(Vertex AI의 이전 이름) 클라이언트 초기화
+aiplatform.init(project=PROJECT_ID, location=LOCATION)
+
 INDEX_DISPLAY_NAME = "faq_index"
 GCS_INPUT_URI = "gs://mhkim-data-bucket/Vector_Search/FAQ"
 DEPLOYED_INDEX_ID = "faq_index_deployed"
@@ -64,7 +67,7 @@ faq_index = aiplatform.MatchingEngineIndex.create_tree_ah_index(
     approximate_neighbors_count=50,
     leaf_node_embedding_count=10,
     leaf_nodes_to_search_percent=20,
-distance_measure_type=aiplatform.matching_engine.matching_engine_index_config.DistanceMeasureType.DOT_PRODUCT_DISTANCE,
+    distance_measure_type=aiplatform.matching_engine.matching_engine_index_config.DistanceMeasureType.DOT_PRODUCT_DISTANCE,
     index_update_method="BATCH_UPDATE", # 일괄 업데이트 방식 사용
 )
 
@@ -82,13 +85,6 @@ faq_index_endpoint.deploy_index(
 )
 
 # == 2.4. 시맨틱 검색 실행 == #
-import os
-import json
-from google.cloud import aiplatform
-from google import genai
-from google.genai.types import EmbedContentConfig
-from typing import List
-
 PROJECT_ID = "vertexai-books"
 LOCATION = "asia-northeast3"
 
@@ -101,8 +97,7 @@ DEPLOYED_INDEX_ID = "faq_index_deployed"
 # 유사도 검색에 사용할 사용자 질문
 QUERY_TEXT = "고객 센터는 몇 시까지 운영하나요?"
 
-# 클라이언트 초기화
-aiplatform.init(project=PROJECT_ID, location=LOCATION)
+# Google GenAI 클라이언트 초기화
 genai_client = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
 
 # 기존 MatchingEngineIndexEndpoint 객체 로드
@@ -137,8 +132,6 @@ for neighbor in response[0]:
         print(f"ID: {neighbor.id}, 거리(Distance): {neighbor.distance:.4f}")
 
 # == 3.2 색인 일괄 업데이트 == #
-from google.cloud import aiplatform
-
 UPDATED_GCS_URI = "gs://mhkim-data-bucket/Vector_Search/FAQ"
 INDEX_ID = "<인덱스 ID>"
 
@@ -148,15 +141,8 @@ faq_index.update_embeddings(
     is_complete_overwrite=True
 )
 
-# == 4. 필터링을 활용한 검색 결과 제한 == #
-import json
-import os
-from typing import List, Dict, Optional
+# == 4.1. 데이터 구조 업데이트 == #
 from faq import faq_data_filtered
-
-import vertexai
-from google import genai
-from google.genai.types import EmbedContentConfig
 
 PROJECT_ID = "vertexai-books"
 LOCATION = "asia-northeast3"
@@ -259,15 +245,10 @@ for neighbor in response[0]:
     print(f"ID: {neighbor.id}, 거리(Distance): {neighbor.distance:.4f}")
 
 # == 5.4. 하이브리드 쿼리 실행 == #
-import os
-from typing import List, Dict, Any
+from typing import Any
 from faq_data import faq_data_filtered
 
-from google.cloud import aiplatform
-from google import genai
-from google.genai.types import EmbedContentConfig
-
-from google.cloud.aiplatform.matching_engine.matching_engine_index_endpoint import Namespace, HybridQuery, MatchNeighbor
+from google.cloud.aiplatform.matching_engine.matching_engine_index_endpoint import HybridQuery, MatchNeighbor
 
 # 희소 벡터 생성을 위한 scikit-learn 라이브러리
 from sklearn.feature_extraction.text import TfidfVectorizer

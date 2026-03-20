@@ -34,7 +34,6 @@ print(response.embeddings)
 import vertexai
 from vertexai.vision_models import Image, MultiModalEmbeddingModel
 
-
 # 클라이언트 초기화
 vertexai.init(project="vertexai-books", location="asia-northeast3")
 
