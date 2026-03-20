@@ -26,7 +26,7 @@ pip install google-genai google-cloud-aiplatform
   pip install mcp google-adk python-dotenv toolbox-core
   ```
 
-- **`Part 6. 엔터프라이즈 AI - 차세대 에이전트 아키텍처와 통합 AI 플랫폼`의 A2A 및 MCP, LangGraph 실습**
+- **`Part6. 엔터프라이즈 AI - 차세대 에이전트 아키텍처와 통합 AI 플랫폼`의 MCP 및 LangGraph, A2A 실습**
   ```bash
   pip install a2a-sdk uvicorn jq fastmcp langgraph langchain-core langchain-google-vertexai langchain-mcp-adapters langchain-mcp-adapters
   ```
@@ -83,7 +83,7 @@ pip install google-genai google-cloud-aiplatform
 
 ### Part 6
 
-- `6-1_A2A(Agent-to-Agent).py`
+- `6-1_A2A(Agent-to-Agent)_protocol.py`
 - `3_3_A2A_MCP_LangGraph/`
   - `agent.py`
   - `mcp_server.py`
