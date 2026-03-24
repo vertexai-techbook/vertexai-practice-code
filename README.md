@@ -83,7 +83,7 @@ pip install google-genai google-cloud-aiplatform
 
 ### Part 6
 
-- `6-1_A2A(Agent-to-Agent)_protocol.py`
+- `6-1_A2A(Agent-to-Agent).py`
 - `3_3_A2A_MCP_LangGraph/`
   - `agent.py`
   - `mcp_server.py`
