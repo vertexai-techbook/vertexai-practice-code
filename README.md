@@ -37,9 +37,8 @@
 
 - **사용량 모니터링**: [Google AI
 Studio](https://aistudio.google.com)에 로그인하여 월별 지출 한도를 확인하고 현재 사용량을 모니터링하세요.
-- **한도 상향 요청**: 현재 할당된 한도를 초과하는 즉각적인 사용량 증가가 예상되는 경우 [이 양식](https://ai.google.dev/gemini-api/docs/rate-limits)을 작성하여 맞춤 한도 상향을 요청하세요.
-- 자세한 내용은 [Gemini API Rate Limits 공식
-문서](https://ai.google.dev/gemini-api/docs/rate-limits?hl=ko)를 참고해 주세요.
+- **한도 상향 요청**: 현재 할당된 한도를 초과하는 즉각적인 사용량 증가가 예상되는 경우 [이 양식](https://forms.gle/ETzX94k8jf7iSotH9)을 작성하여 맞춤 한도 상향을 요청하세요.
+- 자세한 내용은 [Gemini API Rate Limits 공식 문서](https://ai.google.dev/gemini-api/docs/rate-limits?hl=ko)를 참고해 주세요.
 
 ## 📋 필요 패키지 설치
 
